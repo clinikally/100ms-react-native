@@ -1,4 +1,4 @@
-name: Publish 'Room Kit' Package
+name: Publish Room Kit Package
 
 on:
   push:
@@ -24,6 +24,9 @@ jobs:
           node-version: '18'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@clinikally'
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Install dependencies
         working-directory: packages/react-native-room-kit
