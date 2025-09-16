@@ -34,7 +34,7 @@ jobs:
 
       - name: Build package
         working-directory: packages/react-native-room-kit
-        run: yarn build
+        run: yarn prepack
 
       - name: Publish to GitHub Packages
         working-directory: packages/react-native-room-kit
