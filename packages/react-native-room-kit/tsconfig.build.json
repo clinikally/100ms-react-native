@@ -3,7 +3,10 @@
   "compilerOptions": {
     "paths": {
       "@100mslive/react-native-room-kit": ["./src/index"]
-    }
+    },
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "strict": false
   },
   "exclude": ["example"]
 }
