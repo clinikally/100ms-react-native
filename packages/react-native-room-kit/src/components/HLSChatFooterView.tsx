@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import SafeView from './SafeView';
 
 import { useHMSRoomStyleSheet } from '../hooks-util';
 import { HLSHandRaiseButton } from './HLSHandRaiseButton';
@@ -20,7 +20,7 @@ export const HLSChatFooterView = () => {
   }));
 
   return (
-    <SafeAreaView
+    <SafeView
       edges={['bottom']}
       style={[styles.container, hmsRoomStyles.container]}
     >
@@ -29,7 +29,7 @@ export const HLSChatFooterView = () => {
       <HLSHandRaiseButton />
 
       <HLSRoomOptionsButton />
-    </SafeAreaView>
+    </SafeView>
   );
 };
 

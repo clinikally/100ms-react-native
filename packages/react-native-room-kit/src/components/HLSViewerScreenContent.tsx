@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import SafeView from './SafeView';
 
 import { HMSStatusBar } from './StatusBar';
 import { HLSPlayerContainer } from './HLSPlayerContainer';
@@ -50,7 +50,7 @@ export const HLSViewerScreenContent: React.FC<
     <View style={[styles.container, hmsRoomStyles.container]}>
       <HMSStatusBar barStyle={'light-content'} />
 
-      <SafeAreaView
+      <SafeView
         style={[
           styles.container,
           hmsRoomStyles.container,
@@ -60,7 +60,7 @@ export const HLSViewerScreenContent: React.FC<
         <HLSPlayerContainer />
 
         <HLSChatView />
-      </SafeAreaView>
+      </SafeView>
 
       {isPipModeActive ? null : (
         <>

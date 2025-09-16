@@ -1,9 +1,7 @@
 import React, { memo } from 'react';
 import { View, StyleSheet } from 'react-native';
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import SafeView from './SafeView';
 
 import { HMSManageCameraRotation } from './HMSManageCameraRotation';
 import { useHMSRoomStyle } from '../hooks-util';
@@ -37,7 +35,7 @@ export const _Header: React.FC<HeaderProps> = ({
   }));
 
   return (
-    <SafeAreaView
+    <SafeView
       style={transparent ? null : containerStyles}
       edges={['top', 'left', 'right']}
     >
@@ -62,7 +60,7 @@ export const _Header: React.FC<HeaderProps> = ({
           </View>
         ) : null}
       </View>
-    </SafeAreaView>
+    </SafeView>
   );
 };
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 import Modal from 'react-native-modal';
 import { StyleSheet, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import SafeView from './SafeView';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import type { RootState } from '../redux';
@@ -45,7 +45,7 @@ export const FullScreenVideoView = () => {
       supportedOrientations={['portrait', 'landscape']}
     >
       <GestureHandlerRootView style={styles.container}>
-        <SafeAreaView style={styles.container}>
+        <SafeView style={styles.container}>
           <View style={[styles.contentContainer, contentContainerStyles]}>
             {fullScreenPeerTrackNode &&
             fullScreenPeerTrackNode.track?.trackId ? (
@@ -57,7 +57,7 @@ export const FullScreenVideoView = () => {
 
             <HMSFullScreenButton peerTrackNode={fullScreenPeerTrackNode!} />
           </View>
-        </SafeAreaView>
+        </SafeView>
       </GestureHandlerRootView>
     </Modal>
   );

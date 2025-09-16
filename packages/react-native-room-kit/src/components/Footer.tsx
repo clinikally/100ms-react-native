@@ -1,9 +1,7 @@
 import React, { memo, useMemo } from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import SafeView from './SafeView';
 
 import {
   useCanShowRoomOptionsButton,
@@ -85,7 +83,7 @@ export const _Footer: React.FC<FooterProps> = () => {
   }));
 
   return (
-    <SafeAreaView style={containerStyles} edges={['bottom', 'left', 'right']}>
+    <SafeView style={containerStyles} edges={['bottom', 'left', 'right']}>
       <View style={[styles.container, containerStyles]}>
         {footerActionButtons.map((actionType, index) => {
           return (
@@ -110,7 +108,7 @@ export const _Footer: React.FC<FooterProps> = () => {
           );
         })}
       </View>
-    </SafeAreaView>
+    </SafeView>
   );
 };
 

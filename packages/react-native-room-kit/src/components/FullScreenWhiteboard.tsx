@@ -2,7 +2,7 @@ import * as React from 'react';
 import Modal from 'react-native-modal';
 import { StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import SafeView from './SafeView';
 
 import type { RootState } from '../redux';
 import { useHMSRoomColorPalette, useHMSRoomStyle } from '../hooks-util';
@@ -42,9 +42,9 @@ export const FullScreenWhiteboard = () => {
       style={styles.modal}
       supportedOrientations={['portrait', 'landscape']}
     >
-      <SafeAreaView style={[contentContainerStyles, styles.container]}>
+      <SafeView style={[contentContainerStyles, styles.container]}>
         <Whiteboard />
-      </SafeAreaView>
+      </SafeView>
     </Modal>
   );
 };

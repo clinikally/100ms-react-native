@@ -5,7 +5,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import SafeView from './SafeView';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { BackButton } from './BackButton';
@@ -138,10 +138,9 @@ export const Preview = ({
           />
         ) : null}
 
-        <SafeAreaView
+        <SafeView
           style={canPublishVideo ? styles.header : null}
           edges={headerEdges}
-          mode="margin"
         >
           <CompanyLogo style={styles.logo} />
 
@@ -154,17 +153,16 @@ export const Preview = ({
 
             <HMSPreviewPeersList />
           </View>
-        </SafeAreaView>
+        </SafeView>
 
-        <SafeAreaView
+        <SafeView
           style={styles.backButtonContainer}
           edges={backButtonEdges}
-          mode="margin"
         >
           <BackButton />
-        </SafeAreaView>
+        </SafeView>
 
-        <SafeAreaView edges={['left', 'right']} style={styles.footerWrapper}>
+        <SafeView edges={['left', 'right']} style={styles.footerWrapper}>
           <HMSPreviewNetworkQuality />
 
           <HMSKeyboardAvoidingView
@@ -203,7 +201,7 @@ export const Preview = ({
               />
             </View>
           </HMSKeyboardAvoidingView>
-        </SafeAreaView>
+        </SafeView>
       </View>
     </TouchableWithoutFeedback>
   );

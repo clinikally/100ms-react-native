@@ -32,7 +32,7 @@ import {
   BackHandler,
   StatusBar,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import SafeView from '../../components/SafeView';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -221,7 +221,7 @@ const Meeting = () => {
     localPeer.role.name.includes('hls-');
 
   return (
-    <SafeAreaView
+    <SafeView
       edges={showLandscapeLayout ? ['left', 'right'] : undefined}
       style={[
         styles.container,
@@ -268,7 +268,7 @@ const Meeting = () => {
           setIsScreenShared={setIsScreenShared}
         />
       )}
-    </SafeAreaView>
+    </SafeView>
   );
 };
 

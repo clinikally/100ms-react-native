@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Platform, StyleSheet, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import SafeView from '../SafeView';
 
 import {
   useHMSRoomStyleSheet,
@@ -43,7 +43,7 @@ const _ChatAndParticipantsView: React.FC = () => {
     !overlayChatLayout;
 
   return (
-    <SafeAreaView style={styles.container} edges={['left', 'right']}>
+    <SafeView style={styles.container} edges={['left', 'right']}>
       <View
         style={[
           styles.contentContainer,
@@ -69,7 +69,7 @@ const _ChatAndParticipantsView: React.FC = () => {
           <ChatMoreActionsSheetView />
         </>
       ) : null}
-    </SafeAreaView>
+    </SafeView>
   );
 };
 
