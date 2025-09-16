@@ -34,10 +34,10 @@ jobs:
 
       - name: Build package
         working-directory: packages/react-native-room-kit
-        run: yarn prepare-release
+        run: yarn build
 
       - name: Publish to GitHub Packages
         working-directory: packages/react-native-room-kit
-        run: npm publish
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
